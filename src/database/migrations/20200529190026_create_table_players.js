@@ -2,7 +2,7 @@
 exports.up = function(knex) {
     return knex.schema.createTable('players', function(table){
         table.increments('id')
-        table.text('name').notNullable()
+        table.text('nickname').unique().notNullable()
         table.text('email').unique().notNullable()
         table.text('password').notNullable()
         table.integer('score').nullable()
