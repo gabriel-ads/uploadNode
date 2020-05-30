@@ -1,6 +1,7 @@
 const express = require('express')
-const UserController = require('./controllers/UserController')
 const routes = express.Router()
+
+const UserController = require('./controllers/UserController')
 
 routes.get('/players', UserController.index)
 routes.get('/questions', UserController.questions)

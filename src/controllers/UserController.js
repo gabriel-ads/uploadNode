@@ -9,17 +9,17 @@ module.exports = {
         const results = await knex('questions')
         return res.json(results)
     },
-    async createPlayer(req, res, next) {
-        try {
-            const { nickname, email, password } = req.body
+    // async createPlayer(req, res, next) {
+    //     try {
+    //         const { nickname, email, password } = req.body
 
-            await knex('players').insert({
-                nickname, email, password
-            })
+    //         await knex('players').insert({
+    //             nickname, email, password
+    //         })
             
-            return res.status(201).send()
-        } catch (error) {
-            next(error)
-        }
-    }
+    //         return res.status(201).send()
+    //     } catch (error) {
+    //         next(error)
+    //     }
+    // }
 }
