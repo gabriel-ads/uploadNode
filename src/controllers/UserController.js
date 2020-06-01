@@ -2,6 +2,7 @@ const knex = require('../database')
 
 module.exports = {
     async index(req, res) {
+        console.log(process.env.DATABASE_URL)
         const results = await knex('/players')
         return res.json(results)
     },
@@ -18,7 +19,6 @@ module.exports = {
         } catch (error) {
             next(error)
         }
-        
     },
 
     async questions(req, res, next) {
