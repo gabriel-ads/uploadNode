@@ -5,9 +5,9 @@ module.exports = {
     development: {
       client: 'pg',
       connection: {
-        database: process.env.DB,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
+        database: "show_do_milhao",
+        user: "postgres",
+        password: "Bi3lz1nh0767@"
       },
       migrations:{
         directory: `${__dirname}/src/database/migrations`
@@ -16,4 +16,14 @@ module.exports = {
         directory: `${__dirname}/src/database/seeds`
       },
     },
+    production:{
+        client: 'pg',
+      connection: process.env.DATABASE_URL,
+      migrations:{
+        directory: `${__dirname}/src/database/migrations`
+      },
+      seeds:{
+        directory: `${__dirname}/src/database/seeds`
+      },
+    }
   };
