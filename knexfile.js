@@ -7,7 +7,7 @@ module.exports = {
       connection: {
         database: "show_do_milhao",
         user: "postgres",
-        password: "Bi3lz1nh0767@"
+        password: "123@"
       },
       migrations:{
         directory: `${__dirname}/src/database/migrations`
@@ -18,7 +18,7 @@ module.exports = {
     },
     production:{
         client: 'pg',
-      connection: 'postgres://sluubhcatnkdmv:9bae72a9fe970b4b6a6ce95c6d99516b5c4e3052257119820e2d35bc668ef870@ec2-52-202-22-140.compute-1.amazonaws.com:5432/dd5331mvf0bi63',
+      connection: process.env.DATABASE_URL,
       migrations:{
         directory: `${__dirname}/src/database/migrations`
       },
