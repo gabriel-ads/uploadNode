@@ -4,7 +4,8 @@
   "description": "api do show do milhao",
   "main": "./src/server.js",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server.js",
+    "prod": "node src/server.js"
   },
   "keywords": [],
   "author": "Gabriel Alves da Silva",
