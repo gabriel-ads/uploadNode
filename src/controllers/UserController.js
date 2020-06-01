@@ -2,7 +2,7 @@ const knex = require('../database')
 
 module.exports = {
     async index(req, res) {
-        const results = await knex('players')
+        const results = await knex('teste')
         return res.json(results)
     },
 
