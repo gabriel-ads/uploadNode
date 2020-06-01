@@ -12,7 +12,7 @@ module.exports = {
             const { email, password } = req.body
 
             const results = await knex('players').where({
-                email , password
+                email, password
             })
             return res.json(results)
 
