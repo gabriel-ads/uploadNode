@@ -8,7 +8,7 @@ routes.post('/questions', UserController.questions)
 routes.post('/players', UserController.createPlayer)
 routes.post('/logon', UserController.logon)
 routes.put('/players', UserController.updateScore)
-routes.post('/players', UserController.ValidaEmail)
+routes.post('/validaEmail', UserController.ValidaEmail)
 routes.put('/updateSenha', UserController.updateSenha)
 
 module.exports = routes
