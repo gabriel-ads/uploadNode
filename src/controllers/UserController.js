@@ -7,7 +7,7 @@ module.exports = {
         return res.json(results)
     },
 
-    async logon(req, res,next) {
+    async logon(req, res, next) {
         try {
             const { email, password } = req.body
 
@@ -22,8 +22,17 @@ module.exports = {
     },
 
     async questions(req, res, next) {
-        const results = await knex('questions')
-        return res.json(results)
+        try {
+            const { id } = req.body
+
+            const results = await knex('questions').where({
+                id
+            })
+            return res.json(results)
+        } catch (error) {
+            next(error)
+        }
+        
     },
 
     async createPlayer(req, res, next) {
@@ -33,7 +42,7 @@ module.exports = {
             await knex('players').insert({
                 nickname, email, password
             })
-            
+
             return res.status(201).send()
         } catch (error) {
             next(error)
