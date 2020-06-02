@@ -73,9 +73,9 @@ module.exports = {
     },
     async updateSenha(req, res, next) {
         try {
-            const { email, senha } = req.body
+            const { email, password } = req.body
             await knex('players')
-                .update({ senha }).where({
+                .update({ password }).where({
                     email
                 })
             return res.status(201).send()
