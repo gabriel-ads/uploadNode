@@ -32,7 +32,7 @@ module.exports = {
         } catch (error) {
             next(error)
         }
-        
+
     },
 
     async createPlayer(req, res, next) {
@@ -48,16 +48,39 @@ module.exports = {
             next(error)
         }
     },
-    async updateScore(req, res, next){
+    async updateScore(req, res, next) {
         try {
             const { nickname, score } = req.body
             await knex('players')
-            .update({score}).where({
-                nickname
-            })
+                .update({ score }).where({
+                    nickname
+                })
             return res.status(201).send()
         } catch (error) {
             next(error)
         }
-    }
+    },
+    async ValidaEmail(req, res, next) {
+        try {
+            const { email } = req.body
+            await knex('players').where({
+                email
+            })
+            return res.json(results)
+        } catch (error) {
+            next(error)
+        }
+    },
+    async updateSenha(req, res, next) {
+        try {
+            const { email, senha } = req.body
+            await knex('players')
+                .update({ senha }).where({
+                    email
+                })
+            return res.status(201).send()
+        } catch (error) {
+            next(error)
+        }
+    },
 }
