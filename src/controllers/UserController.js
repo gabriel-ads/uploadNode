@@ -63,7 +63,7 @@ module.exports = {
     async ValidaEmail(req, res, next) {
         try {
             const { email } = req.body
-            await knex('players').where({
+            const results = await knex('players').where({
                 email
             })
             return res.json(results)
