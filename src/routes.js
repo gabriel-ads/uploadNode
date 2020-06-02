@@ -7,5 +7,6 @@ routes.get('/players', UserController.index)
 routes.post('/questions', UserController.questions)
 routes.post('/players', UserController.createPlayer)
 routes.post('/logon', UserController.logon)
+routes.put('/player', UserController.updateScore)
 
 module.exports = routes

@@ -47,5 +47,17 @@ module.exports = {
         } catch (error) {
             next(error)
         }
+    },
+    async updateScore(req, res, next){
+        try {
+            const { nickname, id } = req.body
+            await knex('player')
+            .update({score}).where({
+                nickname
+            })
+            return res.status(201).send()
+        } catch (error) {
+            next(error)
+        }
     }
 }
