@@ -83,4 +83,14 @@ module.exports = {
             next(error)
         }
     },
+
+    async ranking(res, next){
+        try {
+            const results = await knex('players')
+            .orderBy('score', 'desc')
+            return res.json(results)
+        } catch (error) {
+            next(error)
+        }
+    }
 }

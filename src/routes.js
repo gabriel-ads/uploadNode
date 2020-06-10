@@ -10,5 +10,6 @@ routes.post('/logon', UserController.logon)
 routes.put('/players', UserController.updateScore)
 routes.post('/validaEmail', UserController.ValidaEmail)
 routes.put('/updateSenha', UserController.updateSenha)
+routes.get('/ranking', UserController.ranking)
 
 module.exports = routes
