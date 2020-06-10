@@ -84,7 +84,7 @@ module.exports = {
         }
     },
 
-    async ranking(res, next){
+    async ranking(req, res, next){
         try {
             const results = await knex('players')
             .orderBy('score', 'desc')
