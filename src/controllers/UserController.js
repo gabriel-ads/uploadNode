@@ -40,7 +40,7 @@ module.exports = {
             const { nickname, email, password } = req.body
 
             await knex('players').insert({
-                nickname, email, password, score = 0
+                nickname, email, password, score = '0'
             })
 
             return res.status(201).send()
