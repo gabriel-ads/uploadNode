@@ -38,9 +38,9 @@ module.exports = {
     async createPlayer(req, res, next) {
         try {
             const { nickname, email, password } = req.body
-
+            const score = 0
             await knex('players').insert({
-                nickname, email, password, score = '0'
+                nickname, email, password, score
             })
 
             return res.status(201).send()
